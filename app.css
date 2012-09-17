@@ -1,0 +1,30 @@
+.iteration-picker {
+    float: right;
+    margin-left: 10px;
+}
+
+.checkbox {
+    float: right;
+    margin-left: 10px;
+}
+
+.add-new {
+    float: left;
+    margin-left: 10px;
+}
+
+.help {
+    float: right;
+}
+
+.headerControls {
+    float: left;
+}
+
+.headerControls .x-panel-body {
+    border-style: none;
+}
+
+.header {
+    margin-top: 10px
+}
