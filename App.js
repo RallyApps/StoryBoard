@@ -16,7 +16,9 @@ Ext.define('StoryBoard', {
         {
             xtype:'container',
             itemId:'bodyContainer',
-            width:'100%'
+            height:'90%',
+            width:'100%',
+            autoScroll:true
         }
     ],
 
@@ -50,7 +52,6 @@ Ext.define('StoryBoard', {
             types: this._types,
             itemId:'cardboard',
             name: 'cardboard',
-            autoScroll: true,
             attribute:'ScheduleState',
             storeConfig:{
                 filters: this._filters
