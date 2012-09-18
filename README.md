@@ -4,4 +4,6 @@ The Story Board app provides your team a view of the stories, defects and defect
 
 If you want to grab the App and try it you can find it [here] (https://github.com/RallyApps/StoryBoard/blob/master/deploy/App.html).
 
+[View a screencast demo of the app](http://screencast.com/t/YQAogqoluR)
+
 ![Alt text](https://github.com/RallyApps/StoryBoard/raw/master/deploy/Screenshot.png)

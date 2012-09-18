@@ -45,6 +45,7 @@ Ext.define('StoryBoard', {
         if(this._filters === undefined) {
             return;
         }
+        this.setLoading();
         if(this._cardBoard !== undefined) {
             this.down('#bodyContainer').remove(this._cardBoard);
         }
@@ -53,11 +54,17 @@ Ext.define('StoryBoard', {
             itemId:'cardboard',
             name: 'cardboard',
             attribute:'ScheduleState',
+            listeners: {
+                    load: function(board, eOpts) {
+                        this.setLoading(false);
+                    },
+                    scope: this
+            },
             storeConfig:{
                 filters: this._filters
             }
         });
-
+        //this.setLoading(false);
         this.down('#bodyContainer').add(this._cardBoard);    
     },
 
@@ -84,6 +91,10 @@ Ext.define('StoryBoard', {
                 listeners: {
                     recordadd: function(addNew, result) {
                         this.down('#cardboard').addCard(result.record);
+                    },
+                    beforerecordadd: function(addNew, eOpts) {
+                        var iteration = this.down('#iterationcombobox').getValue();
+                        eOpts.record.set("Iteration", iteration);
                     },
                     scope: this
                 }
