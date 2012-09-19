@@ -9,7 +9,7 @@ Ext.define('StoryBoard', {
 
     items:[
         {
-            xtype:'fieldcontainer',
+            xtype:'container',
             itemId:'header',
             cls:'header'
         },
@@ -70,9 +70,9 @@ Ext.define('StoryBoard', {
 
     // addition of the help component is an afterthought...no support for it built into the SDK atm that I see, so this is a quick and dirty for now.
     _buildHelpComponent:function (config) {
-        var host = this.context.getWorkspace()._ref.substr(0, this.context.getWorkspace()._ref.indexOf("slm/"));
+        var host = this.context.getWorkspace()._ref.substr(0, this.context.getWorkspace()._ref.indexOf("/slm/"));
         return Ext.create('Ext.Component', Ext.apply({
-            renderTpl:'<a href="http://www.rallydev.com/help/story-board?basehost=https://rally1.rallydev.com" title="Launch Help for Story Board App" target="_blank" ' +
+            renderTpl:'<a href="http://www.rallydev.com/help/story-board?basehost='+host+'" title="Launch Help for Story Board App" target="_blank" ' +
                 'class="help"><img id="appHeaderrighthelp" class="appHelp" src="'+host+'/apps/2.0p3/rui/resources/themes/images/default/help/icon_help.png" title="Launch Help" alt="Launch Help" style=""></a>'
         }, config));
     },
@@ -92,9 +92,8 @@ Ext.define('StoryBoard', {
                     recordadd: function(addNew, result) {
                         this.down('#cardboard').addCard(result.record);
                     },
-                    beforerecordadd: function(addNew, eOpts) {
-                        var iteration = this.down('#iterationcombobox').getValue();
-                        eOpts.record.set("Iteration", iteration);
+                    beforerecordadd: function(addNew, result) {
+                        result.record.set("Iteration", this.down('#iterationcombobox').getValue());
                     },
                     scope: this
                 }
