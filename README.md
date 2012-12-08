@@ -6,4 +6,4 @@ If you want to grab the App and try it you can find it [here] (https://github.co
 
 [View a screencast demo of the app](http://screencast.com/t/YQAogqoluR)
 
-![Alt text](https://github.com/RallyApps/StoryBoard/raw/master/deploy/Screenshot.png)
+![Alt text](https://github.com/RallyApps/StoryBoard/raw/master/screenshots/title-screenshot.png)
